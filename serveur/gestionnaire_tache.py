@@ -2,16 +2,16 @@ from serveur.tache import Tache
 
 class GestionnaireTaches:
     def __init__(self):
-        self.taches = {}   # un dict le clé est l'id est la valeur c'est l'objet tache 
+        self.taches = {}   # un dict 
         self.compteur_id = 1
         
 #une methode pour ajouter une tache dans le dict et incrementer a chaque ajout l'id du prochaine tache 
     
-    def ajouter_tache(self, titre, description, statut,auteur):#ajoute directement à la liste,mais pas encore dans le fichier JSON
+    def ajouter_tache(self, titre, description, statut,auteur):
         if not statut:
-            statut = "TODO"  # Si statut n'est pas spécifié, utilise  par défaut
+            statut = "TODO"  #  par defaut si statut n'est pas specifie
         if not auteur:
-            auteur = "client"  # Si auteur n'est pas spécifié, utilise "client" par défaut
+            auteur = "client"  
         nouv_tache = Tache(self.compteur_id, titre, description, statut ,auteur)
         self.taches[self.compteur_id] = nouv_tache
         self.compteur_id += 1

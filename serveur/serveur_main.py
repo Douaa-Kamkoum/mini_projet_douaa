@@ -21,12 +21,10 @@ def tester_classes():
     for t in gest.lister_taches():
         print(t)
 
-    # tester changement de statut
     print("\nchanger le statut de la tache 1 en DOING") 
     gest.changer_statut(1, "DOING")
     print(gest.taches[1])
 
-    # tester suppression
     print("\nsuppression de la tâche 2") 
     gest.supprimer_tache(2)
 
@@ -37,14 +35,13 @@ def tester_classes():
 
 
 def main():
-    # tester les classes Tache et GestionnaireTaches
     tester_classes()
 
     # demander à l'utilisateur l'adresse ip et le port du serveur
     adr_serv = input("entrez l'adresse ip du serveur : ")
     port = int(input("entrez le port du serveur : "))
 
-    # créer et démarrer le serveur
+    # creer et demarrer le serveur
     serveur = ServeurTaches(adr_serv, port)
     print("\ndemarrage du serveur")
     serveur.demarrer()
