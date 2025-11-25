@@ -1,0 +1,12 @@
+# image de base Python
+FROM python:3.11-slim
+
+# repertoire de travail dans le conteneur
+WORKDIR /app
+
+# copier le code client
+COPY client/ ./client/
+
+
+# commande pour lancer le client
+CMD ["python", "-u", "client/client_main.py"]
