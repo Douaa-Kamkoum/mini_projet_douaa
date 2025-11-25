@@ -1,0 +1,19 @@
+# image de base Python
+FROM python:3.11-slim
+
+# repertoire de travail dans le conteneur
+WORKDIR /app
+
+# copier le code serveur
+COPY serveur/ ./serveur/
+
+# copier le fichier requirements.txt
+# COPY requirements.txt ./
+
+ENV PYTHONPATH=/app
+
+# exposer le port utilisé par le serveur
+EXPOSE 5000
+
+# commande pour démarrer le serveur
+CMD ["python", "-u", "serveur/serveur_main.py"]
