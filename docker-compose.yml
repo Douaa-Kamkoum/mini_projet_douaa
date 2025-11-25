@@ -1,0 +1,29 @@
+version: "3.3"
+
+services:
+  serveur:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    container_name: serveur
+    ports:
+      - "5000:5000"
+    environment:
+      SERVER_IP: 0.0.0.0
+      SERVER_PORT: 5000
+    networks:
+      - taches-net
+
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    container_name: client
+    depends_on:
+      - serveur
+    networks:
+      - taches-net
+
+networks:
+  taches-net:
+    driver: bridge
