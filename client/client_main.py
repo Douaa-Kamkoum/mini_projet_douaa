@@ -8,7 +8,7 @@ def main():
     adr_serv = input("entrez l'adresse ip du serveur : ")
     port = int(input("entrez le port du serveur : "))
 
-    client = ClientTaches(adr_serv, port)  # Connexion au serveur avec l'adresse et le port
+    client = ClientTaches(adr_serv, port)  # connexion au serveur avec l'adresse et le port
     client.connecter()
 
     while True:
@@ -24,7 +24,7 @@ def main():
         elif choix == "4":
             client.changer_statut()  
         else:
-            print("Option invalide. Essayez à nouveau.")
+            print("option invalide  essayez a nouveau.")
 
 if __name__ == "__main__":
     main()
